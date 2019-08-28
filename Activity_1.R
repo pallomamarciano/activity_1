@@ -1,4 +1,16 @@
-#Atividade 1 - R for Data Science
+'''
+File-Name: Activity_1
+Data: 2019, Ago 27
+Author: Marciano, Palloma
+Purpose: First activity of the course
+Data Used: mpg
+
+  
+  *************************************
+  **ATIVIDADE 1 - R FOR DATA SCIENCE **
+  *************************************
+  
+'''
 
 install.packages("lintr")
 library(lintr)
@@ -78,7 +90,7 @@ ggplot(data = mpg) +
 ## Exercises
 # 1. It's missing a parenthesis in the code
 ggplot(data = mpg) + 
-  geom_point(mapping = aes(x = displ, y = hwy, color = "blue"))
+  geom_point(mapping = aes(x = displ, y = hwy), color = "blue")
 
 # 2. Summary of the data
 summary(mpg)
@@ -87,8 +99,28 @@ summary(mpg)
 # Continuous = 5
 
 # 3. 
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy), color = "blue")
 
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy, shape = class))
 
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy, size = class))
 
+# 4. Multiple aesthectics
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy), color = "blue")+
+  aes(x = displ, y = hwy, shape = class)
+# It became confusing
+  
+# 5. stroke aesthetic 
+?geom_point
+# "For shapes that have a border (like 21), you can colour the inside and
+# outside separately. Use the stroke aesthetic to modify the width of the
+# border"
+# Workers better with the width of the border
 
-
+# 6.
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy), color = "displ < 5")
