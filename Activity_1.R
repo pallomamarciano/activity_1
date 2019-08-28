@@ -75,7 +75,20 @@ ggplot(data = mpg) +
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy), color = "blue")
 
-## It's missing a parenthesis in the code
+## Exercises
+# 1. It's missing a parenthesis in the code
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy, color = "blue"))
+
+# 2. Summary of the data
+summary(mpg)
+?mpg
+# Categorical = 6
+# Continuous = 5
+
+# 3. 
+
+
+
+
 
