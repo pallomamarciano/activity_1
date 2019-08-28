@@ -21,4 +21,28 @@ library(tidyverse)
 
 mpg
 
-## Ploting
+## Ploting (This is a scatterplot)
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy))
+
+## Template for ploting (see 3.2.2)
+ggplot(data = <DATA>) + 
+  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))
+
+## Exercises
+
+### 1. ggplot(data = mpg)
+ggplot(data = mpg)
+# A black image appears
+
+### 2. How many rows are in mpg? How many columns?
+mpg # 11 columns and 234 rows
+
+### 3. What does the drv variable describe? Read the help for ?mpg to find out.
+?mpg
+# f = front-wheel drive, r = rear wheel drive, 4 = 4wd
+
+### 4. Make a scatterplot of hwy vs cyl.
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = hwy, y = cyl))
+
