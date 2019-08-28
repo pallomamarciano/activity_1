@@ -46,3 +46,10 @@ mpg # 11 columns and 234 rows
 ggplot(data = mpg) +
   geom_point(mapping = aes(x = hwy, y = cyl))
 
+### 5. What happens if you make a scatterplot of class vs drv? Why is the plot not useful?
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = class, y = drv))
+# There is no correlation between the variables
+
+
+
