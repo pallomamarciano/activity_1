@@ -73,16 +73,18 @@ ggplot(data = mpg) +
 ## Exercises 3.3.1
 ### 1. It's missing a parenthesis in the code
   '''Change the code near y = hwy)'''
+  
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy), color = "blue")
 
-# 2. Summary of the data
+### 2. Summary of the data
 summary(mpg)
 ?mpg
 # Categorical = 6
 # Continuous = 5
 
-# 3. 
+### 3. How do these aesthetics behave differently for categorical 
+# vs. continuous variables?
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy), color = "blue")
 
@@ -92,21 +94,24 @@ ggplot(data = mpg) +
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy, size = class))
 
-# 4. Multiple aesthectics
+### 4. Multiple aesthectics
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy), color = "blue")+
   aes(x = displ, y = hwy, shape = class)
 # It became confusing
   
-# 5. stroke aesthetic 
+### 5. stroke aesthetic 
 ?geom_point
 # "For shapes that have a border (like 21), you can colour the inside and
 # outside separately. Use the stroke aesthetic to modify the width of the
 # border" Works better with the width of the border
 
-# 6.
+### 6.
 ggplot(data = mpg) + 
-  geom_point(mapping = aes(x = displ, y = hwy), color = "displ < 5")
+  geom_point(mapping = aes(x = displ, y = hwy), colour = "displ < 5")
+# The following message appears:'Error in grDevices::col2rgb(colour, TRUE) : 
+# invalid color name 'displ < 5'
+
 
 
 
