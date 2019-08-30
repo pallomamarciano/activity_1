@@ -1,5 +1,5 @@
 '''
-File-Name: Activity_1
+File-Name: atividade-1-palloma-marciano.R
 Data: 2019, Ago 27
 Author: Marciano, Palloma
 Purpose: First activity of the course
