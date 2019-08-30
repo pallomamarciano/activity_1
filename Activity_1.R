@@ -113,5 +113,70 @@ ggplot(data = mpg) +
 # invalid color name 'displ < 5'
 
 
+'''*Facets*, subplots that each display one subset of the data.'''
+
+
+# Exercises 3.5.1
+
+### 1. What happens if you facet on a continuous variable?
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) + 
+  facet_wrap(~ cty, nrow = 2)
+# The visualization of the plot is not usefull
+
+### 2. What do the empty cells in plot with facet_grid(drv ~ cyl) 
+# mean? How do they relate to this plot?
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = drv, y = cyl))
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = drv, y = cyl)) +
+  facet_grid(drv ~ cyl)
+#There is no observations for the specific number of the variable drv
+
+### 3. What plots does the following code make? What does . do?
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  facet_grid(drv ~ .)
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  facet_grid(. ~ cyl)
+# Not facet in different dimensions as rows and columns. It takes the place
+# of one of the variables.
+
+### 4.
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) + 
+  facet_wrap(~ class, nrow = 2)
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy), color = "blue")
+# With the facets you can see distribution in more than to dimensions
+# X and Y. Making the evaluation more precise and detailed.
+
+### 5. 
+?facet_wrap
+# nrow / ncol= Number of rows and columns.
+# Scales, shrink, labeller, as.table, switch, drop, dir
+# Why doesn’t facet_grid() have nrow and ncol arguments?
+# Because both are determined by the variable in the parentheses
+
+### 6. When using facet_grid() you should usually put the variable 
+# with more unique levels in the columns. Why?
+# So the distribution between the subplots be more precise.
+
+
+
+
+
+
+
+
+
+
 
 
