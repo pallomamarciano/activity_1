@@ -40,11 +40,11 @@ mpg
 ggplot(data = mpg) +
   geom_point(mapping = aes(x = displ, y = hwy))
 
-## Template for ploting (see 3.2.2)
+## Template for ploting (see 3.2.3)
 ggplot(data = <DATA>) + 
   <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))
 
-## Exercises
+## Exercises 3.2.4
 
 ### 1. ggplot(data = mpg)
 ggplot(data = mpg)
@@ -68,27 +68,11 @@ ggplot(data = mpg) +
 # is not useful because there are many suboptions that
 # indicates a categorival variable
 
-## Map the colors of your points based on class
-ggplot(data = mpg) + 
-  geom_point(mapping = aes(x = displ, y = hwy, color = class))
 
-ggplot(data = mpg) + 
-  geom_point(mapping = aes(x = displ, y = hwy, size = class))
-#> Warning: Using size for a discrete variable is not advised.
 
-##Left
-ggplot(data = mpg) + 
-  geom_point(mapping = aes(x = displ, y = hwy, alpha = class))
-
-## Right
-ggplot(data = mpg) + 
-  geom_point(mapping = aes(x = displ, y = hwy, shape = class))
-
-ggplot(data = mpg) + 
-  geom_point(mapping = aes(x = displ, y = hwy), color = "blue")
-
-## Exercises
-# 1. It's missing a parenthesis in the code
+## Exercises 3.3.1
+### 1. It's missing a parenthesis in the code
+  '''Change the code near y = hwy)'''
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy), color = "blue")
 
@@ -118,9 +102,11 @@ ggplot(data = mpg) +
 ?geom_point
 # "For shapes that have a border (like 21), you can colour the inside and
 # outside separately. Use the stroke aesthetic to modify the width of the
-# border"
-# Workers better with the width of the border
+# border" Works better with the width of the border
 
 # 6.
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy), color = "displ < 5")
+
+
+
