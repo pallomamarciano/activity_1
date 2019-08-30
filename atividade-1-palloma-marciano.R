@@ -237,3 +237,23 @@ ggplot(data = mpg) +
 ggplot(data = mpg) +
   geom_point(mapping = aes(x = displ, y = hwy, color = drv))
 
+
+# 3.7.1 Exercises
+
+### 1.What is the default geom associated with stat_summary()?
+# A: None
+#How could you rewrite the previous plot to use that geom function
+#instead of the stat function?
+
+
+
+
+
+
+
+
+
+
+
+
+
