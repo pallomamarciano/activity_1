@@ -191,13 +191,49 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = drv)) +
 # Why do you think I used it earlier in the chapter?
 # To hide the legend. Idk
 
-### 4.
+### 4.What does the se argument to geom_smooth() do?
+# Able or disable the observations interval in the line of geom_smooth
 
+### 5.Will these two graphs look different? Why/why not?
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point() + 
+  geom_smooth()
 
+ggplot() + 
+  geom_point(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_smooth(data = mpg, mapping = aes(x = displ, y = hwy))
 
+# They will not because they have the same specifications, just
+# repeated. 
 
+### 6.
 
+# 1. 
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point() + 
+  geom_smooth(se = FALSE)
 
+# 2.
+ggplot(data = mpg) +
+  geom_smooth(mapping = aes(x = displ, y = hwy, linetype = drv), se = FALSE) +
+  geom_point(mapping = aes(x = displ, y = hwy))
 
+# 3. 
+ggplot(data = mpg) +
+  geom_smooth(mapping = aes(x = displ, y = hwy, color = drv), se = FALSE) +
+  geom_point(mapping = aes(x = displ, y = hwy, color = drv))
 
+# 4. 
+ggplot(data = mpg) +
+  geom_smooth(mapping = aes(x = displ, y = hwy), se = FALSE) +
+  geom_point(mapping = aes(x = displ, y = hwy, color = drv))
+
+# 5.
+ggplot(data = mpg) +
+  geom_smooth(mapping = aes(x = displ, y = hwy, linetype = drv), se = FALSE) +
+  geom_point(mapping = aes(x = displ, y = hwy, color = drv))
+
+# 6.
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy, color = drv))
 
