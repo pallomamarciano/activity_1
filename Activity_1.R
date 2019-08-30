@@ -170,7 +170,28 @@ ggplot(data = mpg) +
 # So the distribution between the subplots be more precise.
 
 
+# A geom is the geometrical object that a plot uses to represent data.
 
+http://rstudio.com/cheatsheets
+?geom_smooth
+
+# 3.6.1 Exercises
+
+### 1.What geom would you use to draw a line chart? A boxplot? 
+# A histogram? An area chart?
+# A geom_smooth
+
+### 2.Run this code in your head and predict what the output will 
+# look like. Then, run the code in R and check your predictions.
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = drv)) + 
+  geom_point() + 
+  geom_smooth(se = FALSE)
+
+### 3.What does show.legend = FALSE do? What happens if you remove it?
+# Why do you think I used it earlier in the chapter?
+# To hide the legend. Idk
+
+### 4.
 
 
 
