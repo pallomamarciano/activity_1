@@ -241,9 +241,78 @@ ggplot(data = mpg) +
 # 3.7.1 Exercises
 
 ### 1.What is the default geom associated with stat_summary()?
-# A: None
+# A: geom_bar
 #How could you rewrite the previous plot to use that geom function
 #instead of the stat function?
+
+# Original code
+diamonds
+
+ggplot(data = diamonds) + 
+  stat_summary(
+    mapping = aes(x = cut, y = depth),
+    fun.ymin = min,
+    fun.ymax = max,
+    fun.y = median
+  )
+
+# Code modified (stat to geom)
+ggplot(data = diamonds) +
+  stat_count(mapping = aes(x = cut))
+
+?stat_bin
+
+### 2. 
+ggplot(data = diamonds) + 
+  geom_col(mapping = aes(x = cut, y = ..prop..))
+
+?geom_col
+# Bars that represent the values in the data. On the other hand,
+# geom_bar() makes the he height of the bar proportional to the
+#number of cases in each group
+
+### 3. Most geoms and stats come in pairs that are almost 
+#always used in concert. Read through the documentation and 
+#make a list of all the pairs. What do they have in common?
+# A: I didn´t understand.
+
+### 4.What variables does stat_smooth() compute? What parameters 
+# control its behaviour?
+?stat_smooth
+ggplot(data = diamonds) + 
+  stat_smooth(mapping = aes(x = cut, y = depth), method = "auto")
+# Error: `geom_smooth()` using method = 'gam' and formula 'y ~ s(x, bs = "cs")'
+
+### 5. In our proportion bar chart, we need to set group = 1. Why? 
+# In other words what is the problem with these two graphs?
+
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, y = ..prop.., group = 1))
+
+
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, y = ..prop..))
+
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, fill = color, y = ..prop..))
+# Both give a incorrect probability without the group specification
+
+# 3.8.1 Exercises
+
+### 1. What is the problem with this plot? How could you improve it?
+#Original code
+ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
+  geom_point()
+
+# Modified code = jitter option to improve randomess
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = cty, y = hwy), position = "jitter")
+
+### 2. What parameters to geom_jitter() control the amount of jittering?
+?position_jitter
+# A: The width and the height
+
+### Compare and contrast geom_jitter() with geom_count().
 
 
 
