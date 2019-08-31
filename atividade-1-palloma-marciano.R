@@ -370,19 +370,16 @@ ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) +
   geom_abline() + # Inserts a correlation line to the scatterplot
   coord_fixed() # Corrects the proportions of the coordinates
 
+ 
+"CODE TEMPLATE" # 3.10 The layered grammar of graphics
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ggplot(data = <DATA>) + 
+  <GEOM_FUNCTION>(
+    mapping = aes(<MAPPINGS>),
+    stat = <STAT>, 
+    position = <POSITION>
+  ) +
+  <COORDINATE_FUNCTION> +
+  <FACET_FUNCTION>
+  
+  
