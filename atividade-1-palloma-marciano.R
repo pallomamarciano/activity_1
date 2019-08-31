@@ -312,7 +312,67 @@ ggplot(data = mpg) +
 ?position_jitter
 # A: The width and the height
 
-### Compare and contrast geom_jitter() with geom_count().
+### 3. Compare and contrast geom_jitter() with geom_count().
+?geom_count()
+?geom_jitter()
+
+ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) + 
+  geom_count()
+
+ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) +  
+  geom_jitter()
+#The jitter option presens a more clear scatterplot and its observations.
+
+### 4.What’s the default position adjustment for geom_boxplot()? 
+# Create a visualisation of the mpg dataset that demonstrates it.
+
+ggplot(data = mpg) +
+  geom_boxplot(mapping = aes(x = cty, y = hwy, group = 1))
+
+?geom_boxplot
+# Inserting the group option makes the code work.
+
+
+# 3.9.1 Exercises
+
+### 1. Turn a stacked bar chart into a pie chart using coord_polar().
+ggplot(data = diamonds) + 
+  geom_bar(
+    mapping = aes(x = cut, fill = cut),
+    width = 1
+  ) 
+  
+bar + coord_polar()
+
+### 2. What does labs() do? Read the documentation.
+?labs()
+#A: Define the labels of the variables, titles and subtitles.
+
+?coord_quickmap() 
+# projects a portion of the earth, which is approximately spherical and
+# and preserves the straight lines.
+
+?coord_map() 
+# projects a portion of the earth, which is approximately spherical,
+# Without straight lines.
+
+### 4.What does the plot below tell you about the relationship between 
+# city and highway mpg? Why is coord_fixed() important? What 
+# does geom_abline() do?
+
+ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) +
+  geom_point() +
+  geom_abline()  # Inserts a correlation line to the scatterplot
+
+
+ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) +
+  geom_point() +
+  geom_abline() + # Inserts a correlation line to the scatterplot
+  coord_fixed() # Corrects the proportions of the coordinates
+
+
+
+
 
 
 
