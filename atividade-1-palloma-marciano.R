@@ -382,4 +382,92 @@ ggplot(data = <DATA>) +
   <COORDINATE_FUNCTION> +
   <FACET_FUNCTION>
   
+
   
+# 4 Workflow: basics
+  
+# 4.3 Calling functions
+  
+seq(1, 10)
+
+x <- "hello world"
+
+> x <- "hello"
+
+# 4.4 Practice
+
+### 1. Why does this code not work?
+
+my_variable <- 10
+my_varıable
+
+#A: Because the "i" is not correct
+
+### 2. Tweak each of the following R commands so that they run correctly:
+
+'library(tidyverse)
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy))
+
+fliter(mpg, cyl = 8)
+filter(diamond, carat > 3)'
+
+library(tidyverse)
+
+mpg
+
+diamonds
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy))
+
+filter(mpg, cyl == 8)
+filter(diamonds, carat > 3)
+  
+### 3. Press Alt + Shift + K. What happens? How can you get to 
+# the same place using the menus?
+# A: Keyboard shortcuts appears. In the menus, press the Tools bottom and
+# look for the Keyboard Shortcut Help.
+
+
+
+# 5. Data transformation / Data manipulation
+
+library(nycflights13)
+install.packages("nycflights13")
+library(nycflights13)
+library(tidyverse)
+
+flights
+
+filter(flights, month == 1, day == 1)
+
+# To save the result "<-"
+
+jan1 <- filter(flights, month == 1, day == 1)
+
+# Printing the results and saving them to a varible "()"
+
+(dec25 <- filter(flights, month == 12, day == 25))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
