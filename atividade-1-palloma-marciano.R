@@ -451,6 +451,9 @@ jan1 <- filter(flights, month == 1, day == 1)
 
 (dec25 <- filter(flights, month == 12, day == 25))
 
+# Instead of relying on ==, use near(). Aproximation!
+
+# 5.2.2 Logical operators <- see in the book
 
 
 
