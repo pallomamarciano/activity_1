@@ -525,5 +525,23 @@ filter(flights, is.na(dep_time))
 # IDK yet.
 
 
+# 5.3 Arrange rows with arrange()
+
+# 5.3.1 Exercises
+
+# 1. How could you use arrange() to sort all missing values to 
+# the start? (Hint: use is.na()).
+
+arrange(flights, is.na(dep_time))
+
+?arrange
+
+# 2. Sort flights to find the most delayed flights. Find the 
+# flights that left earliest.
+
+arrange(flights, desc(dep_delay))
+
+arrange(flights, desc(dep_delay))
+
 
 
