@@ -487,10 +487,42 @@ filter(flights, arr_delay >= 60, air_time >= 30)
 
 # 1.7 Departed between midnight and 6am (inclusive)
 
+filter(flights, dep_time >= 000, dep_time <= 600)
 
+# 2. Another useful dplyr filtering helper is between(). What does 
+# it do? Can you use it to simplify the code needed to answer the 
+# previous challenges?
 
+?between
 
+# A: A shortcut to >= and <=. E.g.:
 
+filter(flights, between(dep_time, 000, 600))
+
+filter(flights, between(month, 7, 9))
+
+# 3. How many flights have a missing dep_time? What other variables
+# are missing? What might these rows represent?
+
+filter(flights, is.na(dep_time))
+
+# A: There missing values in dep_delay, arr_time. It probably means
+# that the flights were canceled.
+
+# 4. Why is NA ^ 0 not missing? 
+# A:  Because every operation with NA has the NA result. Then is not
+# possible to identify the result.
+
+# Why is NA | TRUE not missing? 
+# A: It can include FALSE results.
+
+# Why is FALSE & NA not missing? 
+# A: Because false is just a condition that is meets or not. NOt
+# missing values itself. So it's different form NA.
+
+# Can you figure out the general rule? # (NA * 0 is a tricky 
+# counterexample!)
+# IDK yet.
 
 
 
