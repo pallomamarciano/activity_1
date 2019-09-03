@@ -455,16 +455,37 @@ jan1 <- filter(flights, month == 1, day == 1)
 
 # 5.2.2 Logical operators <- see in the book
 
+# 5.2.4 Exercises
 
+### 1. Find all flights that
 
+# 1.1 Had an arrival delay of two or more hours
 
+filter(flights, arr_delay >= 120)
 
+# 1.2 Flew to Houston (IAH or HOU)
 
+filter(flights, dest == "IAH" | dest == "HOU")
 
+# 1.3 Were operated by United, American, or Delta
 
+filter(flights, carrier == "United" | 
+         carrier == "American" | carrier == "Delta")
 
+# 1.4 Departed in summer (July, August, and September)
 
+filter(flights, month %in% c(7, 8, 9))
 
+# 1.5 Arrived more than two hours late, but didn’t leave late
+
+filter(flights, arr_delay >= 120, dep_delay <= 0)
+
+# 1.6 Were delayed by at least an hour, but made up over 30 
+# minutes in flight
+
+filter(flights, arr_delay >= 60, air_time >= 30)
+
+# 1.7 Departed between midnight and 6am (inclusive)
 
 
 
