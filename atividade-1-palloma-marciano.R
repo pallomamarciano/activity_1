@@ -541,7 +541,15 @@ arrange(flights, is.na(dep_time))
 
 arrange(flights, desc(dep_delay))
 
-arrange(flights, desc(dep_delay))
+arrange(flights, (dep_time))
 
+# 3. Sort flights to find the fastest flights.
 
+flights %>% arrange(air_time)
+arrange(flights, (air_time))
 
+# 4. Which flights travelled the longest? Which travelled the shortest?
+
+arrange(flights, (distance))
+
+arrange(flights, desc(distance))
