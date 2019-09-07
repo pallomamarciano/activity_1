@@ -623,13 +623,26 @@ see? What do you see? What do you need to do to fix it?'
 
 ?compare
 
+mutate(flights,
+       duration = arr_time - dep_time)
 
+select(flights, air_time, duration, everything())
 
+# Another try
 
+flights_y <- select(flights,
+       air_time, 
+       arr_time,
+       dep_time
+)
 
+mutate(flights_y, 
+       duration = arr_time - dep_time)
 
+# 
 
-
+transmute(flights_y,
+          duration = dep_time - arr_time)
 
 
 
