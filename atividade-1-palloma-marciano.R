@@ -571,12 +571,20 @@ select(flights, dep_time:arr_delay) # Don't match
 '2. What happens if you include the name of a variable multiple times in 
 a select() call?'
 
-
+select(flights, dep_time, dep_time, dep_time, dep_time)
+# The variable is only select one time, one column.
 
 '3. What does the one_of() function do? Why might it be helpful in 
 conjunction with this vector?
 
 vars <- c("year", "month", "day", "dep_delay", "arr_delay")'
+
+?one_of
+# Matches variable names in a character vector. 
+
+library(tidyselect)
+vars <- c("year", "month", "day", "dep_delay", "arr_delay")
+# Problems using the function
 
 '4. Does the result of running the following code surprise you? How do 
 the select helpers deal with case by default? How can you change that 
