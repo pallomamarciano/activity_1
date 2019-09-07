@@ -592,6 +592,36 @@ default?
 
 select(flights, contains("TIME"))'
 
+select(flights, contains("TIME"))
+
+select(flights, contains(match, ignore.case = TRUE, vars = peek_vars(delay)))
+
+
+'5.5 Add new variables with mutate()'
+
+# Why separate the ) during a command?
+
+'5.5.2 Exercises'
+
+'1. Currently dep_time and sched_dep_time are convenient to look at, 
+but hard to compute with because they’re not really continuous numbers.
+Convert them to a more convenient representation of number of minutes 
+since midnight.'
+
+flights_x <- select(flights,
+                    dep_time,
+                    sched_dep_time
+                    )
+
+mutate(flights_x,
+       departure = dep_time / 60,
+       schedule = sched_dep_time / 60
+       )
+
+'2. Compare air_time with arr_time - dep_time. What do you expect to 
+see? What do you see? What do you need to do to fix it?'
+
+?compare
 
 
 
