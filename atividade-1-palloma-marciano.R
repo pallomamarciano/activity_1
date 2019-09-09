@@ -639,12 +639,33 @@ flights_y <- select(flights,
 mutate(flights_y, 
        duration = arr_time - dep_time)
 
-# This is not a good strategy
-
-transmute(flights_y,
-          duration = dep_time - arr_time)
-
 ?select
 
 library(dplyr)
+
+'I expect to same the same numbers. But it was not the case.'
+
+'3. Compare dep_time, sched_dep_time, and dep_delay. How 
+would you expect those three numbers to be related?'
+
+compare
+
+flights_z <- select(flights, dep_time, sched_dep_time, dep_delay)
+
+flights_z
+# The dep_delay would be the result of the subtraction between 
+# sched_dep_time and dep_time.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
