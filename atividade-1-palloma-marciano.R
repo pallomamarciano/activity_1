@@ -639,10 +639,12 @@ flights_y <- select(flights,
 mutate(flights_y, 
        duration = arr_time - dep_time)
 
-# 
+# This is not a good strategy
 
 transmute(flights_y,
           duration = dep_time - arr_time)
 
+?select
 
+library(dplyr)
 
