@@ -713,8 +713,8 @@ delays <- flights %>%
   group_by(dep_delay) %>% 
   summarise(
     count = n(),
-    dist = mean(distance, na.rm = TRUE),
-    delay = mean(arr_delay, na.rm = TRUE)
+    early = median(distance, na.rm = TRUE),
+    late = median(arr_delay, na.rm = TRUE)
   ) %>% 
   filter(count > 20, dest != "HNL")         
           
