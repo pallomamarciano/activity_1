@@ -656,16 +656,52 @@ flights_z
 # The dep_delay would be the result of the subtraction between 
 # sched_dep_time and dep_time.
 
+'4. Find the 10 most delayed flights using a ranking function. How
+do you want to handle ties? Carefully read the documentation for
+min_rank().'
 
+?min_rank
 
+min_rank(flights, dep_delay)
 
+rank(ties.method = "min")
 
+x <- select(flights, dep_delay)
 
+y <- mutate(flights, row_number(dep_delay))
 
+select(flights, min_rank(dep_delay))
 
+transmute(flights, 
+       min_rank(desc(dep_delay)))
 
+w <- mutate(flights, 
+          min_rank(desc(dep_delay))
+          
+'5. What does 1:3 + 1:10 return? Why?'
 
-
-
+(1:3 + 1:10)        
+          
+# longer object length is not a multiple of shorter object length         
+          
+'6. What trigonometric functions does R provide?'
+          
+# 'cosine, sine, tangent, arc-cosine, arc-sine, arc-tangent, and the 
+# two-argument arc-tangent.'          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
 
 
