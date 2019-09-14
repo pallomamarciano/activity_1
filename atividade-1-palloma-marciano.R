@@ -676,12 +676,14 @@ transmute(flights,
        min_rank(desc(dep_delay)))
 
 w <- mutate(flights, 
-          min_rank(desc(dep_delay))
+          min_rank(desc(dep_delay)))
           
 '5. What does 1:3 + 1:10 return? Why?'
 
-(1:3 + 1:10)        
-          
+1:3 + 1:10
+
+1:5 + 1:10
+
 # longer object length is not a multiple of shorter object length         
           
 '6. What trigonometric functions does R provide?'
@@ -689,11 +691,32 @@ w <- mutate(flights,
 # 'cosine, sine, tangent, arc-cosine, arc-sine, arc-tangent, and the 
 # two-argument arc-tangent.'          
           
+
+'5.6 Grouped summaries with summarise()'   
+
+
+'5.6.7 Exercises'
+
+
+'1. Brainstorm at least 5 different ways to assess the typical delay 
+characteristics of a group of flights. Consider the following 
+scenarios:'          
           
-          
-          
-          
-          
+    'A flight is 15 minutes early 50% of the time, and 15 minutes 
+    late 50% of the time.'
+
+library(nycflights13)
+
+flights
+
+delays <- flights %>% 
+  group_by(dep_delay) %>% 
+  summarise(
+    count = n(),
+    dist = mean(distance, na.rm = TRUE),
+    delay = mean(arr_delay, na.rm = TRUE)
+  ) %>% 
+  filter(count > 20, dest != "HNL")         
           
           
           
